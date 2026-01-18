@@ -696,7 +696,8 @@
   \begin{column}{0.012\textwidth}
     \centering
     \begin{tikzpicture}
-      \draw[dash dot, cobalt!75!black, line width=#2] (0,0) -- (0,#1);
+      %\draw[dash dot, cobalt!75!black, line width=#2] (0,0) -- (0,#1);
+      \draw[double, double distance=0.6pt, blue!70, line width=0.9pt] ($(current page.west)+(7.3, 3.5)$) -- ($(current page.west)+(7.3, -2.1)$);
     \end{tikzpicture}
   \end{column}
 }
@@ -706,9 +707,9 @@
   \setlength{\columnsep}{0pt}%
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.32\textwidth}#1\end{column}
-    \ColSep{0.4pt}
+    \ColSepTikZ{0.4pt}
     \begin{column}{0.34\textwidth}#2\end{column}
-    \ColSep{0.4pt}
+    \ColSepTikZ{0.4pt}
     \begin{column}{0.32\textwidth}#3\end{column}
   \end{columns}
   \endgroup
@@ -1082,6 +1083,52 @@
     \itshape #1
   \end{minipage}
 }
+
+
+\definecolor{linkred}{RGB}{180,20,20}
+
+
+
+\usepackage{listings}
+%\lstset{style=mystyle}
+% Define enhanced style for lstlisting
+\lstset{
+  language=bash, % Set programming language
+  basicstyle=\ttfamily\footnotesize, % Font style and size
+  keywordstyle=\color{blue}\bfseries, % Keyword color and style
+  commentstyle=\color{gray}\itshape, % Comment color and style
+  stringstyle=\color{green}, % String color
+  showstringspaces=false, % Hide spaces in strings
+  numbers=left, % Line numbers
+  numberstyle=\scriptsize\color{gray}, % Line number style
+  stepnumber=1, % Line number step
+  numbersep=3pt, % Line number separation
+  frame=tb, % Top and bottom frame
+  framesep=1pt, % Space between frame and code
+  rulecolor=\color{cobalt!20!blue!10!white}, % Frame color
+  breaklines=true, % Line breaks
+  breakatwhitespace=false, % Break at spaces
+  backgroundcolor=\color{gray!5!cobalt!5}, % Soft blue background
+  %backgroundcolor=\color{gray!5!beige!20}, % Light beige background
+  columns=fullflexible, % Flexible column width
+  xleftmargin=15pt, % Left margin
+  extendedchars=true, % Extended characters
+  inputencoding=utf8, % Input encoding
+  tabsize=4, % Tab size
+  captionpos=b, % Caption position, b is bottom
+  escapeinside={(*@}{@*)}, % LaTeX commands in code
+  keywordstyle=[1]\color{bsmcolor}, % Style for keywords group 1
+  keywordstyle=[2]\color{pvcolor!70!gray}, % Style for keywords group 2
+  keywordstyle=[3]\color{smcolor}, % Style for keywords group 3
+  morekeywords=[1]{Zprime, MET, H0}, % Keywords group 1
+  morekeywords=[2]{PV}, % Keywords group 2
+  %morekeywords=[3]{jet, b, t, jetb} % Keywords group 3
+  title={\textbf{Listing \thelstlisting}} 
+}
+
+
+\usefonttheme{professionalfonts}
+
 
 
 

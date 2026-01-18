@@ -5,6 +5,9 @@
 \usetheme[progressbar=frametitle,subsectionpage=progressbar,block=fill]{metropolis}
 \RequirePackage{MyTalkSty}
 %\input{Diagrams}
+\setbeameroption{show notes} % Speaker notes
+%\setbeameroption{show only notes}     %  only notes
+% \setbeameroption{hide notes}         %  
 
 \thispagestyle{empty}
 
@@ -132,7 +135,7 @@
   }
   {Right-side explanation text.}
 \end{frame}
-
+\note{\scriptsize Here: speaker's notes}
 %###########################################
 %###########################################
 %###########################################
@@ -1004,7 +1007,28 @@ Short concluding statement summarizing the overall message.
 \footnotesize\itshape
 ``A short generic quote or call-to-action can go here.''
 \end{frame}
+%###########################################
+%###########################################
+%###########################################
+\begin{frame}[fragile]{Example code}
+\begin{lstlisting}[language=bash,caption={}]
+The code can be implemented in different languages, such as Bash, Python, and others.
+\end{lstlisting}
+\end{frame}
+%###########################################
+%###########################################
+%###########################################
+\begin{frame}{Example Block} 
+\setbeamercolor{block title}{fg=black,bg=cobalt!50!white} % block title with black text and blue background
+\setbeamercolor{block body}{fg=black,bg=gray!10!white} % block body with black text and lighter blue background
+\begin{block}{Title}
+Text
+\end{block}
 
+\begin{alertblock}{ }
+    Text
+\end{alertblock}
+\end{frame}
 %###########################################
 %###########################################
 %###########################################
